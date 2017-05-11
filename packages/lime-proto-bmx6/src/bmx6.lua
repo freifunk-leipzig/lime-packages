@@ -150,7 +150,7 @@ function bmx6.setup_interface(ifname, args)
 
 	local uci = libuci:cursor()
 
-	local mtu = config.get("network","bmx6_mtu") or "1398"
+	local mtu = config.get("network", "bmx6_mtu", "1500")
 	uci:set("network", owrtDeviceName, "mtu", mtu)
 
 	-- BEGIN [Workaround issue 38]
